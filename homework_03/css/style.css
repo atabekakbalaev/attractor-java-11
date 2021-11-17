@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header {
+    background: #f74f55 url(../images/main-pic.png) center no-repeat;
+    background-size: auto 100%;
+    margin-bottom: 80px;
+}
+
+.header-container {
+    min-height: 496px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    display: inline-block;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 25px;
+}
+
+.header-info {
+    width: 50%;
+    margin: auto 0 auto auto;
+}
+
+.main-title {
+    margin: 0 0 5px;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.header-text {
+    margin: 0 0 12px;
+}
+
+.btn {
+    color: #fff;
+    font-size: 24px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 8px 25px;
+}
+
+.article-title {
+    font-size: 30px;
+    font-weight: normal;
+    color: #000;
+}
+
+.article-text {
+    font-size: 16px;
+    line-height: 26px;
+    color: #404040;
+    margin-bottom: 30px;
+}
+
+
+.article-container {
+    padding-bottom: 30px;
+    background: url(../images/bg-bricks.jpg) no-repeat 15px bottom;
+    background-size: auto 30px;
+    margin-bottom: 80px;
+}
+
+.services {
+    background-color: #2d5f3b;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service-item {
+    color: #fff;
+    padding: 0 30px 30px 30px;
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-item:nth-child(1) {
+    padding-left: 0;
+}
+
+.service-item:nth-child(3) {
+    padding-right: 0;
+}
+
+.service-item:nth-child(2) {
+    background-color: #f74c55;
+}
+
+.service-title {
+    padding-left: 60px;
+    font-size: 22px;
+    line-height: 40px;
+    font-weight: normal;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 35px auto;
+    margin-bottom: 0;
+}
+
+.title-left {
+    background-image: url(../images/ic-stat.png);
+
+}
+
+.title-mid {
+    background-image: url(../images/ic-screen.png);
+}
+
+.title-right {
+    background-image: url(../images/ic-cloud.png);
+}
+
+.service-description {
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.service-btn {
+    margin-left: auto;
+    margin-top: auto;
+    margin-right: 40px;
+    font-size: 34px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    width: 39px;
+    padding: 0;
+}
+
+.additional-info {
+    background: url(../images/bg-nature.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.info-container {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.info-header {
+    width: 600px;
+    color: #fff;
+    font-size: 42px;
+    line-height: 54px;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.info-btn {
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid white;
+    border-radius: 5px;
+    line-height: 54px;
+    font-size: 24px;
+    padding: 0 30px;
+}
+
+.footer {
+    padding-top: 8px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 53px;
+    color: #404040;
+    background: url(../images/bg-line.jpg) repeat-x;
+    background-size: auto 8px;
+}

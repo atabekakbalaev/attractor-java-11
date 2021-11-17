@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<header class="header">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<div class="container">
+				<a class="navbar-brand me-5" href="#">
+					<img src="images/logo.png" alt="Freedom">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+					<ul class="navbar-nav text-uppercase fw-bold">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Portfolio</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Contact</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Shop</a>
+						</li>
+					</ul>
+					<hr class="line">
+
+					<!-- Button trigger modal -->
+					<button type="button" class="btn-user" data-bs-toggle="modal" data-bs-target="#loginModal">
+						<i class="bi bi-person"></i>
+					</button>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div id="mainCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+				aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="images/slide-1.jpg" class="d-block w-100" alt="">
+			</div>
+			<div class="carousel-item">
+				<img src="images/slide-2.jpg" class="d-block w-100" alt="">
+			</div>
+			<div class="carousel-item">
+				<img src="images/slide-3.jpg" class="d-block w-100" alt="">
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+	<div class="container text-center mb-5">
+		<h3 class="mb-5">La Liberté guidant le peuple</h3>
+		<p class="col-lg-9 mx-auto fw-bold p-fs-23px">La Liberté guidant le peuple est une huile sur toile d'Eugène
+			Delacroix
+			réalisée en
+			1830,
+			inspirée de la révolution des Trois Glorieuses qui s'est passée en 1830. Présentée au public au Salon de
+			Paris de
+			1831 sous le titre Scènes de barricades </p>
+	</div>
+	<div class="text-center border-top border-bottom mb-5 py-5 bg-light main-description">
+		<h3 class="mb-5">Postérité de l'œuvre</h3>
+		<div class="container">
+			<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+				<div class="cols">
+					<div class="icon">
+						<i class="bi bi-gear"></i>
+					</div>
+					<p class="p-color staff-text fw-bold">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+						Nihil,
+						laudantium!
+						Tempora ratione
+						quidem sequi velit, ullam officia molestias aspernatur adipisci.</p>
+				</div>
+				<div class="cols">
+					<div class="icon">
+						<i class="bi bi-eye"></i>
+					</div>
+					<p class="p-color staff-text fw-bold">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+						Temporibus eveniet
+						aliquid deserunt
+						consequatur rem aspernatur minus blanditiis a, doloribus fuga odit accusantium nemo molestias
+						quia!</p>
+				</div>
+				<div class="cols">
+					<div class="icon">
+						<i class="bi bi-arrow-repeat"></i>
+					</div>
+					<p class="p-color staff-text fw-bold">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+						Necessitatibus odit
+						at dicta, excepturi
+						suscipit animi corrupti ipsa laudantium! Enim provident sequi dolores laboriosam, adipisci optio
+						in.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container mb-5 pb-5">
+		<h3 class="text-center mb-5 pb-3">Notre Equipe</h3>
+		<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-5">
+			<div class="col">
+				<div class="card h-100 border-0 rounded-0">
+					<div class="card-body p-0">
+						<img src="images/photo-1.jpg" class="img-fluid w-100" alt="Craig Garner CEO">
+						<h5 class="staff-name py-2">Craig Garner <span class="staff-title">CEO</span></h5>
+						<p class="p-color staff-text">Some quick example text to build on the card title and make up the
+							bulk of the card's
+							content.
+						</p>
+					</div>
+					<div class="d-flex pb-0 btn-group social-links" role="group" aria-label="Social links">
+						<a href="#" class="btn btn-outline-dark border-0 rounded-0 facebook-bg-color"><i
+								class="bi bi-facebook"></i></a>
+						<a href="#" class="btn btn-outline-dark border-0 rounded-0 google-bg-color"><i
+								class="bi bi-google"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100 border-0 rounded-0">
+					<div class="card-body p-0">
+						<img src="images/photo-2.jpg" class="img-fluid w-100" alt="CEO">
+						<h5 class="staff-name py-2">Bridge Roberts <span class="staff-title">Creative Genius</span></h5>
+						<p class="p-color staff-text">Some quick example text to build on the card title and make up the
+							bulk of the card's
+							content.
+						</p>
+					</div>
+					<div class="d-flex pb-0 btn-group social-links" role="group" aria-label="Social links">
+						<a href="#" class="btn btn-outline-dark border-0 rounded-0 facebook-bg-color"><i
+								class="bi bi-facebook"></i></a>
+						<a href="#" class="btn btn-outline-dark border-0 rounded-0  globe-bg-color"><i
+								class="bi bi-globe2"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card h-100 border-0 rounded-0">
+					<div class="card-body p-0">
+						<img src="images/photo-3.jpg" class="img-fluid w-100" alt="creative genius">
+						<h5 class="staff-name py-2">Marage Garner <span class="staff-title">Chef De Projet</span></h5>
+						<p class="p-color staff-text">Some quick example text to build on the card title and make up the
+							bulk of the card's
+							content.
+						</p>
+					</div>
+					<div class="d-flex pb-0 btn-group social-links" role="group" aria-label="Social links">
+						<a href="#" class="btn btn-outline-dark border-0 rounded-0 twitter-bg-color"><i
+								class="bi bi-twitter"></i></a>
+						<a href="#" class="btn btn-outline-dark border-0 rounded-0 youtube-bg-color"><i
+								class="bi bi-youtube"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<span class="text-capitalize">Copyright &copy; All rights reserved. Bridgetech-ma.com.com &dash;
+				goh.h.com&commat;.com</span>
+		</div>
+	</footer>
+
+	<!-- Modal -->
+	<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="loginModalLabel">Login</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="mb-3">
+							<label for="email" class="form-label">Email address</label>
+							<input type="email" class="form-control" id="email">
+						</div>
+						<div class="mb-3">
+							<label for="password" class="form-label">Password</label>
+							<input type="password" class="form-control" id="password">
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+body {
+    background-color: beige;
+    color: green;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-text {
+    color: red;
+    text-transform: uppercase;
+}

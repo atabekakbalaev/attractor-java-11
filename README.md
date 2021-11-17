@@ -1,1 +1,1 @@
-# attractor-java-11
+# attractor-school

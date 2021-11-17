@@ -1,0 +1,132 @@
+body {
+	font-family: 'Istok Web', sans-serif;
+}
+
+h3 {
+	font-size: 40px;
+	color: #775ba3;
+}
+
+.header {
+	background: #775ba3;
+}
+
+.nav-link {
+	font-size: 14px;
+}
+
+.btn-user {
+	font-size: 24px;
+	color: #fff;
+	background: transparent;
+	border: none;
+}
+
+.line {
+	background: rgba(255, 255, 255, 0.7);
+}
+
+.carousel-indicators [data-bs-target] {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: transparent;
+	border: 2px solid #fff;
+	opacity: 1;
+}
+
+.carousel-indicators .active {
+	background: #fff;
+	width: 8px;
+	height: 8px;
+	margin-top: 2px;
+}
+
+.icon {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px;
+	width: 100px;
+	height: 100px;
+	font-size: 60px;
+	padding-top: 10px;
+	border: 1px solid #000;
+	border-radius: 50%;
+}
+
+.main-description {
+	border-top: 1px solid #91c5a9 !important;
+	border-bottom: 1px solid #91c5a9 !important;
+}
+
+.p-color {
+	color: #4b3f55 !important;
+}
+
+.p-fs-23px {
+	font-size: 23px;
+}
+
+.staff-text {
+	font-size: 13px;
+}
+
+.staff-name {
+	font-size: 15px;
+	color: #91c5a9;
+	text-transform: uppercase;
+	border-top: 2px solid #91c5a9;
+	border-bottom: 2px solid #91c5a9;
+}
+
+.staff-title {
+	font-size: 12px;
+}
+
+.social-links a {
+	color: #fff;
+	font-size: 25px;
+}
+
+.facebook-bg-color {
+	background-color: #4267B2;
+}
+
+.google-bg-color {
+	background-color: #db4a39;
+}
+
+.globe-bg-color {
+	background-color: #FF00BF;
+}
+
+.twitter-bg-color {
+	background-color: #1DA1F2;
+}
+
+.youtube-bg-color {
+	background-color: #FF0000;
+}
+
+.footer {
+	background-color: #54865d;
+	color: #fff;
+	height: 70px;
+	line-height: 70px;
+	font-size: 14px;
+}
+
+.modal-content {
+	background-color: #d2c0f0;
+}
+
+@media screen and (max-width: 600px) {
+	.carousel {
+		display: none;
+	}
+
+	.header {
+		margin-bottom: 50px;
+	}
+	
+}

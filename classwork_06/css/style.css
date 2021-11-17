@@ -1,0 +1,35 @@
+body {
+    font-family: 'Istok Web', sans-serif;
+}
+
+.header {
+    background-color: #775ba3;
+}
+
+.header ul {
+    font-size: 14px;
+}
+
+.btn-user {
+    font-size: 24px;
+    color: #fff;
+    border: none;
+    background-color: transparent;
+}
+
+.line {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.carousel-indicators .active {
+    width: 8px;
+    height: 8px;
+    margin-top: 2px;
+}
