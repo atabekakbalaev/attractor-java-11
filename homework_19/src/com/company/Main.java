@@ -77,9 +77,15 @@ public class Main {
     static int dragonToHeroAttackAmount(Hero hero, Dragon dragon, char action) {
         int damage = 0;
         int shield = action == 'd' ? hero.getShield() : 0;
+        int fireball = 1;
         if (new Random().nextInt(2) == 0) {
-            damage = dragon.getStrength() + dragon.getWeapon() - (hero.getDefense() + shield);
-            System.out.println("The Dragon has attacked the Hero...");
+            if (new Random().nextInt(2) == 0) {
+                damage = dragon.getStrength() * 2 * (shield > 0 ? 0 : 1);
+                System.out.println("Dragon has used fireball...");
+            } else {
+                damage = dragon.getStrength() + dragon.getWeapon() - (hero.getDefense() + shield);
+                System.out.println("The Dragon has attacked the Hero...");
+            }
         } else {
             System.out.println("The Dragon didn't attack...");
         }
