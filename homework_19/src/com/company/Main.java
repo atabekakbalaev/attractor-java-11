@@ -9,8 +9,8 @@ public class Main {
         int move = 0;
         int[][] damages = new int[2][100];
         Scanner scanner = new Scanner(System.in);
-        Hero hero = new Hero(1000, 100, 120, 250, 150);
-        Dragon dragon = new Dragon(2000, 120, 150, 120);
+        Hero hero = new Hero(1000, 100, 120, 250, 100);
+        Dragon dragon = new Dragon(2000, 150, 150, 120);
 
         System.out.println("Game started... Initial state of the game:");
         printInfo(move, hero, 0, dragon, 0);
@@ -25,34 +25,56 @@ public class Main {
                 break;
             }
             move++;
-            int amountOfAttackFromHero = heroToDragonAttackAmount(hero, dragon);
-            int amountOfAttackFromDragon = dragonToHeroAttackAmount(hero, dragon);
+            char userAction = getUserAction();
+            int amountOfAttackFromHero = heroToDragonAttackAmount(hero, dragon, userAction);
+            int amountOfAttackFromDragon = dragonToHeroAttackAmount(hero, dragon, userAction);
             printInfo(move, hero, amountOfAttackFromHero, dragon, amountOfAttackFromDragon);
         }
     }
-    static int dragonToHeroAttackAmount(Hero hero, Dragon dragon) {
-        int damage;
+    static char getUserAction() {
+        Scanner scanner = new Scanner(System.in);
+        char option = '0';
+        while(!(option == 'a' || option == 'n' || option == 'd')) {
+            System.out.println("Choose from the following actions for the Hero: ");
+            System.out.println("a - attack\nn - nothing\nd - defense");
+            System.out.print("Your choice: ");
+            option = scanner.nextLine().charAt(0);
+        }
+        return option;
+    }
+    static int dragonToHeroAttackAmount(Hero hero, Dragon dragon, char action) {
+        int damage = 0;
+        int shield = action == 'd' ? hero.getShield() : 0;
         if (new Random().nextInt(2) == 0) {
-            damage = dragon.getStrength() + dragon.getWeapon() - hero.getDefense();
+            damage = dragon.getStrength() + dragon.getWeapon() - (hero.getDefense() + shield);
             System.out.println("The Dragon has attacked the Hero...");
         } else {
-            damage = 0;
             System.out.println("The Dragon didn't attack...");
         }
+        damage = Math.max(0, damage);
         int hpLeft = hero.getHealthPoints() - damage;
         int heroHP = Math.max(0, hpLeft);
         hero.setHealthPoints(heroHP);
         return damage;
     }
-    static int heroToDragonAttackAmount(Hero hero, Dragon dragon) {
-        int damage;
-        if (new Random().nextInt(4) > 0) { // 75%, 1,2,3 except 0
-            damage = hero.getStrength() + hero.getWeapon() - dragon.getDefense();
-            System.out.println("\nThe Hero has attacked the Dragon...");
-        } else {
-            damage = 0;
-            System.out.println("\nThe Hero has missed...");
+    static int heroToDragonAttackAmount(Hero hero, Dragon dragon, char action) {
+        int damage = 0;
+        switch (action) {
+            case 'a':
+                if (new Random().nextInt(4) > 0) { // 75%, 1,2,3 except 0
+                    damage = hero.getStrength() + hero.getWeapon() - dragon.getDefense();
+                    System.out.println("\nThe Hero has attacked the Dragon...");
+                } else {
+                    System.out.println("\nThe Hero has missed...");
+                }
+                break;
+            case 'n':
+                System.out.println("\nThe Hero has chosen to do nothing...");
+                break;
+            case 'd':
+                System.out.println("\nThe Hero is holding the shield...");
         }
+        damage = Math.max(0, damage);
         int hpLeft = dragon.getHealthPoints() - damage;
         int dragonHP = Math.max(0, hpLeft);
         dragon.setHealthPoints(dragonHP);
