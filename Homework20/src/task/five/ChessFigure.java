@@ -1,4 +1,4 @@
-package task.four;
+package task.five;
 
 enum Shape {
     Q, K, B, R, P
@@ -25,7 +25,7 @@ public abstract class ChessFigure {
         System.out.printf("X: %d, Y: %d\n", this.x, this.y);
     }
 
-    public void move(int x1, int y1) {
+    public void move(int x1, int y1, int boardSize) {
         int x = x1 >= 1 ? 1 : x1 <= -1 ? -1 : 0;
         int y = y1 >= 1 ? 1 : y1 <= -1 ? -1 : 0;
         this.setX(x + this.getX());

@@ -1,7 +1,7 @@
-package task.four;
+package task.five;
 
 public class Pawn extends ChessFigure {
-    public Pawn(int x, int y, Color color, Shape shape) {
-        super(x, y, color, shape);
+    public Pawn(int x, int y, Color color) {
+        super(x, y, color, Shape.P);
     }
 }

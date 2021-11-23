@@ -1,4 +1,4 @@
-package task.four;
+package task.five;
 
 public class Queen extends ChessFigure {
     public Queen(int x, int y, Color color) {
