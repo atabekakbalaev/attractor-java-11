@@ -1,4 +1,4 @@
-package step.two;
+package task.two;
 
 public class Motorboat extends WaterVehicle {
     private int speed;

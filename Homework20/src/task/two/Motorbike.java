@@ -1,4 +1,4 @@
-package step.two;
+package task.two;
 
 public class Motorbike extends GroundVehicle {
     private double maximumPower;

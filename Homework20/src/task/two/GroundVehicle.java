@@ -1,4 +1,4 @@
-package step.two;
+package task.two;
 
 public class GroundVehicle extends Vehicle{
     private int numberOfWheels;

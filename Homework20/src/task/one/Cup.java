@@ -1,8 +1,8 @@
-package step.one;
+package task.one;
 
-public class Bottle extends ContainerWithLid {
-    private final String shapeName = "Bottle";
-    private double volume = 0.5;
+public class Cup extends Container {
+    private final String shapeName = "Cup";
+    private double volume = 0.25;
 
     @Override
     public String getShapeName() {

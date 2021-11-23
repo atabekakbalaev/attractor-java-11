@@ -1,4 +1,4 @@
-package step.two;
+package task.two;
 
 public class Truck extends GroundVehicle {
     private String type;

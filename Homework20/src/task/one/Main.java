@@ -1,4 +1,4 @@
-package step.one;
+package task.one;
 
 public class Main {
 

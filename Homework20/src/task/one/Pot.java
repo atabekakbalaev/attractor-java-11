@@ -1,4 +1,4 @@
-package step.one;
+package task.one;
 
 public class Pot extends ContainerWithLid {
     private final String shapeName = "Pot";

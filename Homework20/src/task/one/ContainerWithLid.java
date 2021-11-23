@@ -1,4 +1,4 @@
-package step.one;
+package task.one;
 
 public abstract class ContainerWithLid extends Container {
     private double lidSurfaceArea;

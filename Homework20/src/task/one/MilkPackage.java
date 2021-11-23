@@ -1,4 +1,4 @@
-package step.one;
+package task.one;
 
 public class MilkPackage extends Container {
     private final String shapeName = "MilkPackage";
@@ -11,6 +11,6 @@ public class MilkPackage extends Container {
 
     @Override
     public double getVolume() {
-        return this.getVolume();
+        return this.volume;
     }
 }
