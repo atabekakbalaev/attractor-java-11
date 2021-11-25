@@ -2,16 +2,17 @@ package homework21;
 
 import java.time.LocalDate;
 import java.util.Random;
+import java.util.SortedMap;
 
 public class Main {
 
     public static void main(String[] args) {
         Store store = new Store();
-        Product[] products = getFilledProducts(new Product[20]);
-        doInspection(products);
+        store = getFilledProducts(new Product[20], store);
+        doInspection(store);
     }
 
-    static Product[] getFilledProducts(Product[] products) {
+    static Store getFilledProducts(Product[] products, Store store) {
         for (int i = 0; i < products.length; i++) {
             int choice = new Random().nextInt(5);
             Product p = null;
@@ -33,20 +34,26 @@ public class Main {
                     break;
             }
             products[i] = p;
+            store.placeProduct(products[i]);
         }
-        return products;
+        store.setProducts(products);
+        return store;
     }
 
     static LocalDate getRandomDate() {
         int day = new Random().nextInt(200) + 1;
-        LocalDate producedOn = LocalDate.now().minusDays(day);
-        return producedOn;
+        return LocalDate.now().minusDays(day);
     }
 
-    static void doInspection(Product[] products) {
-        for(Product p : products) {
-            System.out.println(p);
+    static void doInspection(Store store) {
+        String divider = "-".repeat(8) + "+" + ("-".repeat(16) + "+").repeat(4);
+        String productLineFormat = "%8s|%16s|%16s|%16s|%16s%n";
+        System.out.format(productLineFormat, "Product", "Produced on", "Storage place", "S. life days", "Fresh");
+        System.out.println(divider);
+        for(Product p : store.getProducts()) {
+            System.out.format(productLineFormat, p.getClass().getSimpleName(), p.getProducedOn(),
+                    p.getStoragePlace().toString(), p.getExpiryDateInFridgeDuration(), p.isFresh());
         }
-        System.out.printf("There are %d products in the store\n", products.length);
+//        System.out.printf("There are %d products in the store\n", products.length);
     }
 }
