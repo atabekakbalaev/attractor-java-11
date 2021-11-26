@@ -1,6 +1,8 @@
 package homework21;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Random;
 import java.util.SortedMap;
 
@@ -50,10 +52,19 @@ public class Main {
         String productLineFormat = "%8s|%16s|%16s|%16s|%16s%n";
         System.out.format(productLineFormat, "Product", "Produced on", "Storage place", "S. life days", "Fresh");
         System.out.println(divider);
+
         for(Product p : store.getProducts()) {
-            System.out.format(productLineFormat, p.getClass().getSimpleName(), p.getProducedOn(),
-                    p.getStoragePlace().toString(), p.getExpiryDateInFridgeDuration(), p.isFresh());
+            int duration;
+            if (p.getStoragePlace() == StoragePlace.Icebox) {
+                duration = p.getExpiryDateInFridgeDuration();
+            } else {
+                duration = p.getExpiryDateInShowcaseDuration();
+            }
+
+            String s = duration > 0 ? Integer.toString(duration) : "INF";
+            System.out.format(productLineFormat, p.getClass().getSimpleName(),  DateTimeFormatter.ofLocalizedDate(
+                    FormatStyle.MEDIUM).format(p.getProducedOn()),
+                    p.getStoragePlace().toString(), s, p.isFresh());
         }
-//        System.out.printf("There are %d products in the store\n", products.length);
     }
 }

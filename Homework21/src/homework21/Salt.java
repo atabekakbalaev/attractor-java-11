@@ -12,4 +12,9 @@ public class Salt extends Product {
     public boolean isFresh() {
         return true;
     }
+
+    @Override
+    public int getExpiryDateInShowcaseDuration() {
+        return 0;
+    }
 }

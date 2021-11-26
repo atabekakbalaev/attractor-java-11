@@ -33,4 +33,5 @@ public abstract class Product {
     }
 
     public abstract boolean isFresh();
+    public abstract int getExpiryDateInShowcaseDuration();
 }

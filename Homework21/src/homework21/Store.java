@@ -16,21 +16,4 @@ public class Store {
                 StoragePlace.Icebox : StoragePlace.Showcase;
         product.setStoragePlace(storagePlace);
     }
-
-    public void canPlaceProduct(Product product) {
-        int index = this.getFirstNullIndex();
-        if (index != -1) {
-            this.products[index] = product;
-        } else {
-            System.out.println("The Store is full. Cannot add anymore products.");
-        }
-    }
-    private int getFirstNullIndex() {
-        for(int i = 0; i <= this.products.length; i++) {
-            if (this.products[i] == null) {
-                return i;
-            }
-        }
-        return -1;
-    }
 }

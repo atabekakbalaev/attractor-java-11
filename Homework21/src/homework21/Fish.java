@@ -17,9 +17,13 @@ public class Fish extends Product {
                 duration = this.getExpiryDateInFridgeDuration();
                 break;
             case Showcase:
-                duration = (int) this.getExpiryDateInFridgeDuration() / 6;
+                duration = getExpiryDateInShowcaseDuration();
                 break;
         }
         return this.getProducedOn().plusDays(duration).isBefore(LocalDate.now()) ? true : false;
+    }
+    @Override
+    public int getExpiryDateInShowcaseDuration() {
+        return (int) this.getExpiryDateInFridgeDuration() / 6;
     }
 }
