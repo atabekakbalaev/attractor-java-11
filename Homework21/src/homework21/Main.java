@@ -17,24 +17,14 @@ public class Main {
     static Store getFilledProducts(Product[] products, Store store) {
         for (int i = 0; i < products.length; i++) {
             int choice = new Random().nextInt(5);
-            Product p = null;
-            switch (choice) {
-                case 0:
-                    p = new Milk(Milk.class.getSimpleName(), 60, getRandomDate());
-                    break;
-                case 1:
-                    p = new Salt(Salt.class.getSimpleName(), 0, getRandomDate());
-                    break;
-                case 2:
-                    p = new Fish(Fish.class.getSimpleName(), 20, getRandomDate());
-                    break;
-                case 3:
-                    p = new Corn(Corn.class.getSimpleName(), 150, getRandomDate());
-                    break;
-                case 4:
-                    p = new Stew(Stew.class.getSimpleName(), 180, getRandomDate());
-                    break;
-            }
+            Product p = switch (choice) {
+                case 0 -> new Milk(Milk.class.getSimpleName(), 60, getRandomDate());
+                case 1 -> new Salt(Salt.class.getSimpleName(), 0, getRandomDate());
+                case 2 -> new Fish(Fish.class.getSimpleName(), 20, getRandomDate());
+                case 3 -> new Corn(Corn.class.getSimpleName(), 150, getRandomDate());
+                case 4 -> new Stew(Stew.class.getSimpleName(), 180, getRandomDate());
+                default -> null;
+            };
             products[i] = p;
             store.placeProduct(products[i]);
         }

@@ -11,19 +11,14 @@ public class Fish extends Product {
     @Override
     public boolean isFresh() {
         int i = this.getStoragePlace().ordinal();
-        int duration = 0;
-        switch (StoragePlace.values()[i]) {
-            case Icebox:
-                duration = this.getExpiryDateInFridgeDuration();
-                break;
-            case Showcase:
-                duration = getExpiryDateInShowcaseDuration();
-                break;
-        }
-        return this.getProducedOn().plusDays(duration).isBefore(LocalDate.now()) ? true : false;
+        int duration = switch (StoragePlace.values()[i]) {
+            case Icebox -> this.getExpiryDateInFridgeDuration();
+            case Showcase -> getExpiryDateInShowcaseDuration();
+        };
+        return this.getProducedOn().plusDays(duration).isBefore(LocalDate.now());
     }
     @Override
     public int getExpiryDateInShowcaseDuration() {
-        return (int) this.getExpiryDateInFridgeDuration() / 6;
+        return this.getExpiryDateInFridgeDuration() / 6;
     }
 }

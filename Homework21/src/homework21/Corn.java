@@ -20,7 +20,7 @@ public class Corn extends Product {
             case Showcase:
                 return true;
         }
-        return this.getProducedOn().plusDays(duration).isBefore(LocalDate.now()) ? true : false;
+        return this.getProducedOn().plusDays(duration).isBefore(LocalDate.now());
     }
     @Override
     public int getExpiryDateInShowcaseDuration() { return 0; }
