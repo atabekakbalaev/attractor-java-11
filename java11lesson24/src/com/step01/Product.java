@@ -25,39 +25,3 @@ public class Product {
         }
     }
 }
-
-
-//    public void fillState(){
-//        if(state.equals("base")){
-//            truckState = new OnBaseState();
-//        }else if(state.equals("repair")){
-//            truckState = new OnRepairState();
-//        }else {
-//            truckState = new OnRouteState();
-//        }
-//    }
-//
-//    public void changeDriver(){
-//        try{
-//            truckState.changeDriver(this);
-//        }
-//        catch (Exception ex){
-//            System.out.println(ex.getMessage());
-//        }
-//    }
-//    public void startDriving(){
-//        try{
-//            truckState.startDriving(this);
-//        }
-//        catch (Exception ex){
-//            System.out.println(ex.getMessage());
-//        }
-//    }
-//    public void startRepair(){
-//        try{
-//            truckState.startRepair(this);
-//        }
-//        catch (Exception ex){
-//            System.out.println(ex.getMessage());
-//        }
-//    }
