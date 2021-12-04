@@ -1,4 +1,4 @@
-package com.step04;
+package com.step05;
 
 public class ForSaleState extends State {
     @Override
@@ -14,11 +14,22 @@ public class ForSaleState extends State {
 
     @Override
     public void giveToTheWinner(Product product) throws Exception {
-        if (product.getPrice() == 0) {
+        double price = product.getPrice();
+        if (price == 0) {
             throw new Exception("Error. The product cannot be given for free.");
         } else {
+            String s = "";
+            CodeGenerator cg = new CodeGenerator();
+            if (price >= 1000) {
+                s = cg.makeCode("Gold-" + product.getId());
+            } else if (price < 1000 && price >= 500) {
+                s = cg.makeCode("Silver-" + product.getId());
+            } else {
+                s = cg.makeCode("Bronze-" + product.getId());
+            }
             product.setState("sold");
             product.setProductState(new SoldState());
+            product.setHonoraryCode(s);
         }
     }
 

@@ -3,21 +3,21 @@
     "id":"1",
     "name":"Car",
     "price":100.5,
-    "honoraryCode":"honoraryCode01",
-    "state": "inStock"
+    "honoraryCode":"",
+    "state": "in_stock"
   },
   {
     "id":"2",
     "name":"Hat",
     "price":10.1,
-    "honoraryCode":"honoraryCode02",
+    "honoraryCode":"",
     "state": "in_stock"
   },
   {
     "id":"3",
     "name":"Bike",
     "price":15.5,
-    "honoraryCode":"honoraryCode03",
+    "honoraryCode":"",
     "state": "for_sale"
   },
   {

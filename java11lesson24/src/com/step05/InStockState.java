@@ -1,4 +1,4 @@
-package com.step04;
+package com.step05;
 
 public class InStockState extends State {
     @Override

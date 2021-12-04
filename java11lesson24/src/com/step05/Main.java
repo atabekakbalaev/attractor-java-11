@@ -1,4 +1,4 @@
-package com.step04;
+package com.step05;
 
 import java.io.IOException;
 import java.util.Scanner;
