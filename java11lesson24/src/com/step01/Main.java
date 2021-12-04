@@ -11,6 +11,7 @@ public class Main {
                 System.out.println(p);
             }
         }catch (IOException ie){
+            System.out.println(ie.getMessage());
         }
     }
 }

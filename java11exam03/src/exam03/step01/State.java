@@ -1,2 +1,4 @@
-package exam03.step01;public class State {
+package exam03.step01;
+
+public abstract class State {
 }

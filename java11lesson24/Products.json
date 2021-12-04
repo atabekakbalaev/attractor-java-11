@@ -25,6 +25,6 @@
     "name":"Plate",
     "price":1.5,
     "honoraryCode":"honoraryCode04",
-    "state": "for_sale"
+    "state": "sold"
   }
 ]
