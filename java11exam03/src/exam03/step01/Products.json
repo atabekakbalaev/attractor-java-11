@@ -1,0 +1,14 @@
+[
+  {
+    "id":"1",
+    "name":"Car",
+    "price":100.5,
+    "honoraryCode":"honoraryCode01"
+  },
+  {
+    "id":"2",
+    "name":"Hat",
+    "price":10.1,
+    "honoraryCode":"honoraryCode02"
+  }
+]
