@@ -32,7 +32,7 @@ public class Player {
 
     public void printPlayerStatus() {
         String headerFormat = "|%10s|%12s|%10s|%12s|%15s|\n";
-        String contentFormat = "|%10s|%12s|%10s|%12s|%15.2f|\n";
+        String contentFormat = "|%10s|%12s|%10s|%12s|%14.2f%%|\n";
         String divider = "+" + "-".repeat(63) + "+";
         System.out.println(divider);
         System.out.format(headerFormat, "Wins", "Loses", "Draws", "Total games", "Win rate");
@@ -45,7 +45,7 @@ public class Player {
         return this.drawCount + this.loseCount + this.winCount;
     }
     public double getWinRate() {
-        return this.getTotalGameCount() != 0 ? (double) this.winCount / this.getTotalGameCount() : 0;
+        return this.getTotalGameCount() != 0 ? (double) 100 * this.winCount / this.getTotalGameCount() : 0;
     }
 
     public String getName() {

@@ -19,7 +19,7 @@ public class Game {
                 if (p.getName().equals("Human")) {
                     choice = this.getUserInput();
                 } else {
-                    choice = new Random().nextInt(3) + 1;
+                    choice = new Random().nextInt(5) + 1;
                 }
                 Type type = getTypeByNumber(choice);
                 p.setCurrentChoice(type, this.currentGameNumber);
@@ -53,9 +53,22 @@ public class Game {
                 human.increaseDrawCount();
                 comp.increaseDrawCount();
             } else if (
+                    // Бумага - побеждает камень и Спока
                     humanChoices[i].equals(Type.PAPER) && compChoices[i].equals(Type.ROCK) ||
+                    humanChoices[i].equals(Type.PAPER) && compChoices[i].equals(Type.SPOCK) ||
+                            // Камень - побеждает ящерицу и ножницы
+                    humanChoices[i].equals(Type.ROCK) && compChoices[i].equals(Type.LIZARD) ||
                     humanChoices[i].equals(Type.ROCK) && compChoices[i].equals(Type.SCISSORS) ||
-                    humanChoices[i].equals(Type.SCISSORS) && compChoices[i].equals(Type.PAPER)) {
+                            // Ножницы - побеждают бумагу и ящерицу
+                    humanChoices[i].equals(Type.SCISSORS) && compChoices[i].equals(Type.PAPER) ||
+                    humanChoices[i].equals(Type.SCISSORS) && compChoices[i].equals(Type.LIZARD) ||
+                            // Ящерица - побеждает Спока и бумагу
+                    humanChoices[i].equals(Type.LIZARD) && compChoices[i].equals(Type.SPOCK) ||
+                    humanChoices[i].equals(Type.LIZARD) && compChoices[i].equals(Type.PAPER) ||
+                            // Спок - побеждает ножницы и камень
+                    humanChoices[i].equals(Type.SPOCK) && compChoices[i].equals(Type.SCISSORS) ||
+                    humanChoices[i].equals(Type.SPOCK) && compChoices[i].equals(Type.ROCK)
+            ) {
                 human.increaseWinCount();
                 comp.increaseLoseCount();
             } else {
@@ -70,6 +83,8 @@ public class Game {
             case 1 -> type = Type.ROCK;
             case 2 -> type = Type.PAPER;
             case 3 -> type = Type.SCISSORS;
+            case 4 -> type = Type.LIZARD;
+            case 5 -> type = Type.SPOCK;
             default -> {
                 System.out.println("No such choice.");
                 type = null;
@@ -78,24 +93,32 @@ public class Game {
         return type;
     }
     public void showMenu() {
-        String menu = """
+        String menu1 = """
                 Choose your option(1-3)
                 1. Rock
                 2. Papers
                 3. Scissors
                 """;
-        System.out.print(menu);
+        String menu2 = """
+                Choose your option(1-5)
+                1. Rock
+                2. Papers
+                3. Scissors
+                4. Lizard
+                5. Spock
+                """;
+        System.out.print(menu2);
     }
     public int getUserInput() {
         Scanner scanner = new Scanner(System.in);
-        int option = 0;
-        while(!(option >= 1 && option <= 3)) {
+        int option = 0, lower = 1, upper = 5;
+        while(!(option >= lower && option <= upper)) {
             this.showMenu();
             System.out.print("Your choice: ");
             try {
                 option = Integer.parseInt(scanner.nextLine().replaceAll("[^0-9]", ""));
             } catch (Exception e) {
-                System.out.println("Input error! Enter a number between 1 and 3 - " + e.getMessage());
+                System.out.println("Input error! Enter a number between 1 and " + upper + " - " + e.getMessage());
             }
         }
 
