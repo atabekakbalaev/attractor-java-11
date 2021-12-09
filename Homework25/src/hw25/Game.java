@@ -4,9 +4,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
-    private Player[] players;
+    private final Player[] players;
     private int currentGameNumber;
-    private int totalGames;
+    private final int totalGames;
 
     public Game(Player[] players, int totalGames) {
         this.players = players;
@@ -65,28 +65,25 @@ public class Game {
         }
     }
     public Type getTypeByNumber(int number) {
-        Type type = null;
+        Type type;
         switch (number) {
-            case 1:
-                type = Type.ROCK;
-                break;
-            case 2:
-                type = Type.PAPER;
-                break;
-            case 3:
-                type = Type.SCISSORS;
-                break;
-            default:
+            case 1 -> type = Type.ROCK;
+            case 2 -> type = Type.PAPER;
+            case 3 -> type = Type.SCISSORS;
+            default -> {
                 System.out.println("No such choice.");
                 type = null;
+            }
         }
         return type;
     }
     public void showMenu() {
-        String menu = "Choose your option(1-3)\n" +
-                "1. Rock\n" +
-                "2. Papers\n" +
-                "3. Scissors\n";
+        String menu = """
+                Choose your option(1-3)
+                1. Rock
+                2. Papers
+                3. Scissors
+                """;
         System.out.print(menu);
     }
     public int getUserInput() {
@@ -103,21 +100,5 @@ public class Game {
         }
 
         return option;
-    }
-
-    public Player[] getPlayers() {
-        return players;
-    }
-
-    public void setPlayers(Player[] players) {
-        this.players = players;
-    }
-
-    public int getCurrentGameNumber() {
-        return currentGameNumber;
-    }
-
-    public void setCurrentGameNumber(int currentGameNumber) {
-        this.currentGameNumber = currentGameNumber;
     }
 }
