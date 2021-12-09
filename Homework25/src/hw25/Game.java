@@ -7,19 +7,21 @@ public class Game {
     private final Player[] players;
     private int currentGameNumber;
     private final int totalGames;
+    private int level;
 
     public Game(Player[] players, int totalGames) {
         this.players = players;
         this.totalGames = totalGames;
     }
     public void startGame() {
+        this.level = this.getGameLevel();
         while (this.currentGameNumber < 6) {
             for (Player p : players) {
                 int choice;
                 if (p.getName().equals("Human")) {
                     choice = this.getUserInput();
                 } else {
-                    choice = new Random().nextInt(5) + 1;
+                    choice = new Random().nextInt(this.getTypeLength()) + 1;
                 }
                 Type type = getTypeByNumber(choice);
                 p.setCurrentChoice(type, this.currentGameNumber);
@@ -28,6 +30,23 @@ public class Game {
             }
             this.currentGameNumber++;
         }
+    }
+    public int getTypeLength() {
+        return this.level == 1 ? 3 : 5;
+    }
+    public int getGameLevel() {
+        int level = 0;
+        Scanner scanner = new Scanner(System.in);
+        while(level < 1 || level > 2) {
+            String gameLevelMenu = "Choose the game level(1 - easy or 2 - hard): ";
+            System.out.print(gameLevelMenu);
+            try {
+                level = Integer.parseInt(scanner.nextLine().replaceAll("[^0-9]", ""));
+            } catch (Exception e) {
+                System.out.println("Input error! Enter 1 or 2 only " + " - " + e.getMessage());
+            }
+        }
+        return level;
     }
     public void printGameResults(Player human, Player comp) {
         if (human.getWinRate() > comp.getWinRate()) {
@@ -107,16 +126,17 @@ public class Game {
                 4. Lizard
                 5. Spock
                 """;
-        System.out.print(menu2);
+        System.out.print(this.level == 1 ? menu1 : menu2);
     }
     public int getUserInput() {
         Scanner scanner = new Scanner(System.in);
-        int option = 0, lower = 1, upper = 5;
+        int option = 0, lower = 1;
+        int upper = this.getTypeLength();
         while(!(option >= lower && option <= upper)) {
             this.showMenu();
             System.out.print("Your choice: ");
             try {
-                option = Integer.parseInt(scanner.nextLine().replaceAll("[^0-9]", ""));
+                option = Integer.parseInt(scanner.nextLine().replaceAll("[^-0-9]", ""));
             } catch (Exception e) {
                 System.out.println("Input error! Enter a number between 1 and " + upper + " - " + e.getMessage());
             }
