@@ -12,6 +12,7 @@ public class Game {
     public Game(Player[] players, int totalGames) {
         this.players = players;
         this.totalGames = totalGames;
+        this.level = 1;
     }
     public void startGame() {
         this.level = this.getGameLevel();
@@ -41,7 +42,11 @@ public class Game {
             String gameLevelMenu = "Choose the game level(1 - easy or 2 - hard): ";
             System.out.print(gameLevelMenu);
             try {
-                level = Integer.parseInt(scanner.nextLine().replaceAll("[^0-9]", ""));
+                String s = scanner.nextLine();
+                if (isAPositiveIntegerWithinRange(s, 1, 2)) level = Integer.parseInt(s);
+                else {
+                    throw new Exception("The number is invalid!");
+                }
             } catch (Exception e) {
                 System.out.println("Input error! Enter 1 or 2 only " + " - " + e.getMessage());
             }
@@ -136,12 +141,21 @@ public class Game {
             this.showMenu();
             System.out.print("Your choice: ");
             try {
-                option = Integer.parseInt(scanner.nextLine().replaceAll("[^-0-9]", ""));
+                String s = scanner.nextLine();
+                if (isAPositiveIntegerWithinRange(s, lower, upper)) {
+                    option = Integer.parseInt(s);
+                } else throw new Exception("The number is invalid!");
             } catch (Exception e) {
                 System.out.println("Input error! Enter a number between 1 and " + upper + " - " + e.getMessage());
             }
         }
 
         return option;
+    }
+    public static boolean isAPositiveIntegerWithinRange(String str, int start, int end) {
+        if(str.matches("\\d+")) {
+            int n = Integer.parseInt(str);
+            return n >= start && n <= end;
+        } else return false;
     }
 }
